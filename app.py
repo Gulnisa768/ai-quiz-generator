@@ -1,3 +1,4 @@
+
 import streamlit as st
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
@@ -32,7 +33,7 @@ if st.button("Generate Quiz"):
         outputs = model.generate(
             **inputs,
             max_length=64,
-            num_beams=4,
+            num_beams=5,
             num_return_sequences=5
         )
 
@@ -46,3 +47,8 @@ if st.button("Generate Quiz"):
             st.write(f"{i+1}. {question}")
     else:
         st.warning("Please enter a paragraph first.")
+
+
+
+
+
